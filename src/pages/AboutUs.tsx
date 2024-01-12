@@ -73,6 +73,7 @@ const AboutUs: React.FC = () => {
 							fontSize="2rem"
 							fontWeight="500"
 							textTransform="capitalize"
+							colorScheme="gray"
 						>
 							About A.A Bride & Spartan
 						</Heading>
@@ -84,6 +85,7 @@ const AboutUs: React.FC = () => {
 							letterSpacing="0.2px"
 							textAlign="justify"
 							my={5}
+							colorScheme="gray"
 						>
 							A.A.BRIDGE &amp; SPARTAN is a full-service law firm with the
 							capacity to handle the legal needs of clients in Nigeria’s
@@ -101,6 +103,7 @@ const AboutUs: React.FC = () => {
 							letterSpacing="0.2px"
 							textAlign="justify"
 							my={5}
+							colorScheme="gray"
 						>
 							Our goal is to always provide our clients with innovative,
 							competent, cost-effective, and well- timed legal solutions.
@@ -112,6 +115,7 @@ const AboutUs: React.FC = () => {
 							lineHeight="1.5rem"
 							letterSpacing="0.2px"
 							textAlign="justify"
+							colorScheme="gray"
 							my={5}
 						>
 							At A.A.BRIDGE &amp; SPARTAN, we offer deep knowledge not just of

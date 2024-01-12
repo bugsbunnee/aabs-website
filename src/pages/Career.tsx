@@ -45,6 +45,7 @@ const Career: React.FC = () => {
 				>
 					<Box maxWidth="90%">
 						<Heading
+							colorScheme="gray"
 							fontSize="2rem"
 							fontWeight="500"
 							textTransform="capitalize"
@@ -53,6 +54,7 @@ const Career: React.FC = () => {
 						</Heading>
 
 						<Text
+							colorScheme="gray"
 							fontSize="1rem"
 							fontWeight="400"
 							lineHeight="1.5rem"

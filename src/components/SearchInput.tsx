@@ -98,6 +98,7 @@ const SearchInput: React.FC = () => {
 					<Input
 						_focus={{ bgColor: 'gray.50' }}
 						bgColor="gray.50"
+						colorScheme="gray"
 						value={searchText}
 						onChange={handleChange}
 						borderRadius={30}

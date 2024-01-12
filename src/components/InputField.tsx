@@ -21,6 +21,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>(
 						errorBorderColor="error.100"
 						variant="outline"
 						bg="white"
+						colorScheme="gray"
 						_disabled={{ opacity: 0.5 }}
 					/>
 				</InputGroup>

@@ -261,14 +261,19 @@ const Counsel: React.FC = () => {
 				<Box mt={5} width="100%">
 					<Heading
 						fontSize="1.2rem"
-						color="gray.800"
 						textTransform="capitalize"
 						noOfLines={1}
+						colorScheme="gray"
 					>
 						{profile.title}
 					</Heading>
 
-					<Text mt={1} fontSize="medium" textTransform="capitalize">
+					<Text
+						colorScheme="gray"
+						mt={1}
+						fontSize="medium"
+						textTransform="capitalize"
+					>
 						{profile.subtitle}
 					</Text>
 

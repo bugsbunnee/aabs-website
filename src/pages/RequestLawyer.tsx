@@ -26,7 +26,11 @@ const RequestLawyer: React.FC = () => {
 					>
 						<Box maxWidth="90%">
 							<Box>
-								<Heading fontSize="2rem" textTransform="capitalize">
+								<Heading
+									fontSize="2rem"
+									textTransform="capitalize"
+									colorScheme="gray"
+								>
 									Get Started
 								</Heading>
 
@@ -36,6 +40,7 @@ const RequestLawyer: React.FC = () => {
 									lineHeight="1.5rem"
 									letterSpacing="0.2px"
 									textAlign="justify"
+									colorScheme="gray"
 									my={5}
 								>
 									Please fill in this form and one of our specialist lawyers
@@ -49,6 +54,7 @@ const RequestLawyer: React.FC = () => {
 									lineHeight="1.5rem"
 									letterSpacing="0.2px"
 									textAlign="justify"
+									colorScheme="gray"
 									my={5}
 								>
 									Compulsory fields are marked with an asterisk.
@@ -56,7 +62,12 @@ const RequestLawyer: React.FC = () => {
 							</Box>
 
 							<Box mt={10}>
-								<Heading fontSize="2rem" textTransform="capitalize" my={5}>
+								<Heading
+									fontSize="2rem"
+									textTransform="capitalize"
+									my={5}
+									colorScheme="gray"
+								>
 									You can reach us here
 								</Heading>
 
@@ -73,6 +84,7 @@ const RequestLawyer: React.FC = () => {
 												<Heading
 													fontSize="1rem"
 													fontWeight="500"
+													colorScheme="gray"
 													textTransform="capitalize"
 												>
 													{info.label}
@@ -82,6 +94,7 @@ const RequestLawyer: React.FC = () => {
 													{info.icon}
 
 													<Text
+														colorScheme="gray"
 														letterSpacing="0.2px"
 														fontWeight="400"
 														fontSize="0.875rem"

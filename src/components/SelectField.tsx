@@ -14,6 +14,7 @@ const SelectField = React.forwardRef<HTMLInputElement, Props>(
 			<Stack spacing={2} width="100%">
 				<Select
 					{...otherProps}
+					colorScheme="gray"
 					icon={<FaChevronDown color="gray" size={20} />}
 					id={otherProps.name}
 					ref={ref}
