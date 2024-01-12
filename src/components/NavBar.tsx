@@ -23,6 +23,7 @@ import { IoMdClose, IoMdCloseCircle } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { APP_ROUTES } from '../utils/constants';
 
+import Conditional from './Conditional';
 import SearchInput from './SearchInput';
 
 import logoLarge from '../assets/images/logo.png';
@@ -126,7 +127,7 @@ const NavBar: React.FC = () => {
 
 	const renderSmallMenuNavigation = () => {
 		return (
-			<Menu isLazy>
+			<Menu closeOnSelect={false} isLazy>
 				{({ isOpen }) => (
 					<>
 						<MenuButton
@@ -153,13 +154,17 @@ const NavBar: React.FC = () => {
 						>
 							{navigationLinks.map((navigationLink) => (
 								<React.Fragment key={navigationLink.label}>
-									<MenuItem onClick={() => {}} p={3} bgColor="gray.900">
+									<MenuItem onClick={undefined} p={3} bgColor="gray.900">
 										{renderLargeMenuNavigation(navigationLink)}
 									</MenuItem>
-									{navigationLink.label ===
-									navigationLinks[navigationLinks.length - 1].label ? null : (
+									<Conditional
+										isVisible={
+											navigationLink.label !==
+											navigationLinks[navigationLinks.length - 1].label
+										}
+									>
 										<MenuDivider opacity={0.3} borderWidth={0.5} />
-									)}
+									</Conditional>
 								</React.Fragment>
 							))}
 						</MenuList>
