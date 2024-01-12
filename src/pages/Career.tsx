@@ -75,8 +75,7 @@ const Career: React.FC = () => {
 						<Button
 							as={Link}
 							href={`mailto:${import.meta.env.VITE_EMAIL}`}
-							bgColor="gray.900"
-							color="gray.50"
+							colorScheme="gray"
 							_hover={{ textDecoration: 'none' }}
 							size="lg"
 							borderRadius={5}

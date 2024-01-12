@@ -232,8 +232,7 @@ const BriefLawyer: React.FC = () => {
 
 			<Button
 				mt={5}
-				bgColor="gray.200"
-				color="gray.900"
+				colorScheme="gray"
 				form="brieflawyer"
 				isDisabled={!isValid}
 				isLoading={isSubmitting}

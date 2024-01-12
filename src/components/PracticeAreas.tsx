@@ -95,8 +95,7 @@ const PracticeAreas: React.FC = () => {
 			<Box display="flex" justifyContent="center">
 				<Button
 					onClick={() => navigate(APP_ROUTES.allPracticeAreas)}
-					color="gray.50"
-					bgColor="gray.900"
+					colorScheme="gray"
 					size="md"
 					borderRadius={5}
 					marginTop={8}

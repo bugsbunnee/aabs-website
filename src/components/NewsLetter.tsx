@@ -96,8 +96,7 @@ const NewsLetter: React.FC = () => {
 				/>
 
 				<Button
-					bgColor="gray.200"
-					color="gray.900"
+					colorScheme="gray"
 					form="newsletter"
 					isDisabled={!isValid}
 					isLoading={isSubmitting}

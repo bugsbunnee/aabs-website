@@ -71,7 +71,7 @@ const ContactUs: React.FC = () => {
 	];
 
 	return (
-		<Box bgColor="gray.900" width="100vw" p={10}>
+		<Box id="contact-us" bgColor="gray.900" width="100vw" p={10}>
 			<Stack>
 				<Center>
 					<Box

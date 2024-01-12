@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FaCaretUp, FaCaretDown, FaSearch } from 'react-icons/fa';
-import { IoMdClose } from 'react-icons/io';
+import { IoMdClose, IoMdCloseCircle } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { APP_ROUTES } from '../utils/constants';
 
@@ -216,13 +216,20 @@ const NavBar: React.FC = () => {
 								variant="ghost"
 								aria-label="Search database"
 								size="lg"
-								icon={<FaSearch color="white" />}
+								icon={
+									isOpen ? (
+										<IoMdCloseCircle color="white" />
+									) : (
+										<FaSearch color="white" />
+									)
+								}
 							/>
 						</HStack>
 					</Show>
 
 					<Show below="lg">{renderSmallMenuNavigation()}</Show>
 				</HStack>
+
 				<Collapse in={isOpen}>
 					<Box
 						bg="gray.900"

@@ -125,8 +125,7 @@ const LatestNews: React.FC = () => {
 					</Text>
 
 					<Button
-						bgColor="gray.900"
-						color="gray.50"
+						colorScheme="gray"
 						size="md"
 						borderRadius={5}
 						marginTop={8}
