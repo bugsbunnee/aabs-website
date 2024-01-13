@@ -12,10 +12,9 @@ const AllPracticeAreas: React.FC = () => {
 		<>
 			<Header title="Our Expertise" />
 
-			<Box backgroundColor="gray.50" p={20}>
+			<Box p={20}>
 				<Box display="flex" justifyContent="center">
 					<Text
-						color="gray.900"
 						fontSize="1rem"
 						fontWeight="400"
 						lineHeight="1.5rem"

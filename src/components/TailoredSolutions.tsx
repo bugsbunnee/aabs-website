@@ -12,6 +12,8 @@ import {
 import { Slide } from '../models';
 import { APP_ROUTES } from '../utils/constants';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
+
 import corporate from '../assets/images/corporate.jpg';
 import tailored from '../assets/images/hero_two.jpg';
 import mission from '../assets/images/mission.jpg';
@@ -25,6 +27,7 @@ import 'swiper/css/parallax';
 
 const TailoredSolutions: React.FC = () => {
 	const navigate = useNavigate();
+	const colorMode = useCustomColorMode();
 
 	const tailoredSolutionSlides: Slide[] = [
 		{
@@ -57,14 +60,19 @@ const TailoredSolutions: React.FC = () => {
 	];
 
 	return (
-		<Box bgColor="gray.900" width="100vw" px={10} py={20}>
-			<Heading color="gray.50" fontSize="2rem" size="lg" textAlign="center">
+		<Box bgColor={colorMode.bg} width="100vw" px={10} py={20}>
+			<Heading
+				color={colorMode.color}
+				fontSize="2rem"
+				size="lg"
+				textAlign="center"
+			>
 				Our Core Values
 			</Heading>
 
 			<Box display="flex" justifyContent="center">
 				<Text
-					color="gray.50"
+					color={colorMode.color}
 					fontSize="1rem"
 					fontWeight="400"
 					lineHeight="1.5rem"
@@ -112,8 +120,8 @@ const TailoredSolutions: React.FC = () => {
 
 								<Box width="90%" zIndex={20}>
 									<Heading
-										color="gray.50"
 										size="lg"
+										color="gray.50"
 										fontSize="1.2rem"
 										lineHeight="1.5rem"
 										textTransform="capitalize"
@@ -137,7 +145,6 @@ const TailoredSolutions: React.FC = () => {
 											size="xs"
 											marginLeft={1}
 											fontWeight="bold"
-											colorScheme="gray"
 											onClick={() => navigate(APP_ROUTES.aboutUs)}
 										>
 											View More

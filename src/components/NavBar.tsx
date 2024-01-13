@@ -23,11 +23,13 @@ import { IoMdClose, IoMdCloseCircle } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { APP_ROUTES } from '../utils/constants';
 
+import ColorModeSwitch from './ColorModeSwitch';
 import Conditional from './Conditional';
 import SearchInput from './SearchInput';
 
 import logoLarge from '../assets/images/logo.png';
 import logoSmall from '../assets/images/logo_only.png';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 interface NavigationLink {
 	label: string;
@@ -36,6 +38,7 @@ interface NavigationLink {
 
 const NavBar: React.FC = () => {
 	const { isOpen, onToggle } = useDisclosure();
+	const { color } = useCustomColorMode();
 
 	const navigationLinks: NavigationLink[] = [
 		{
@@ -229,6 +232,8 @@ const NavBar: React.FC = () => {
 									)
 								}
 							/>
+
+							<ColorModeSwitch />
 						</HStack>
 					</Show>
 
@@ -237,8 +242,8 @@ const NavBar: React.FC = () => {
 
 				<Collapse in={isOpen}>
 					<Box
-						bg="gray.900"
-						height="5rem"
+						bg={color}
+						minHeight="5rem"
 						p={5}
 						display="flex"
 						alignItems="center"

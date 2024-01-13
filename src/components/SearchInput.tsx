@@ -25,6 +25,7 @@ import Conditional from './Conditional';
 import SearchItem from './SearchItem';
 import SearchItemSkeleton from './SearchItemSkeleton';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import results from '../data/search';
 
 const SearchInput: React.FC = () => {
@@ -90,23 +91,22 @@ const SearchInput: React.FC = () => {
 		setSearchText('');
 	}, [location.pathname]);
 
+	const { bg, bgOpaque, color, colorOpaque } = useCustomColorMode();
 	return (
 		<Box position="relative">
 			<form>
 				<InputGroup w="100%">
-					<InputLeftElement children={<BsSearch />} />
+					<InputLeftElement children={<BsSearch color={color} />} />
 					<Input
-						_focus={{ bgColor: 'gray.50' }}
-						bgColor="gray.50"
-						colorScheme="gray"
+						_focus={{ bgColor: color }}
 						value={searchText}
 						onChange={handleChange}
 						borderRadius={30}
 						placeholder="Enter something to search"
 						variant="filled"
 						fontSize="medium"
-						color="gray.900"
-						focusBorderColor="dark.800"
+						focusBorderColor={bg}
+						_placeholder={{ color: colorOpaque }}
 					/>
 					{
 						<InputRightElement
@@ -124,7 +124,7 @@ const SearchInput: React.FC = () => {
 					maxHeight={500}
 					overflowY="scroll"
 					borderRadius={5}
-					bgColor="gray.900"
+					bg={bgOpaque}
 					zIndex={9999}
 					p={5}
 				>

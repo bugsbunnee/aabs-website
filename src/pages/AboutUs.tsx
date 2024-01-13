@@ -1,15 +1,32 @@
 import React from 'react';
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Flex,
+	Heading,
+	Image,
+	SimpleGrid,
+	Text,
+	useColorModeValue,
+} from '@chakra-ui/react';
 import { Slide } from '../models';
+import { COLOR_MODE } from '../utils/constants';
 
 import AwardsAndRecognition from '../components/AwardsAndRecognition';
 import ContactUs from '../components/ContactUs';
 import Header from '../components/Header';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
+
 import heroTwo from '../assets/images/hero_two.jpg';
+import realEstate from '../assets/images/real_estate.jpg';
 import excellence from '../assets/images/excellence.jpg';
+import mission from '../assets/images/mission.jpg';
+import vision from '../assets/images/vision.jpg';
 
 const AboutUs: React.FC = () => {
+	const colorMode = useCustomColorMode();
+	const coreValuesBg = useColorModeValue('gray.200', COLOR_MODE.DARK_OPAQUE);
+
 	const coreValues: Slide[] = [
 		{
 			img: excellence,
@@ -19,21 +36,21 @@ const AboutUs: React.FC = () => {
 			url: '',
 		},
 		{
-			img: excellence,
+			img: realEstate,
 			title: 'Integrity',
 			subtitle:
 				'We pride ourselves in our devotion to demonstrating the highest ethical ideals in our legal practice, and our commitment to upholding the rule of law.',
 			url: '',
 		},
 		{
-			img: excellence,
+			img: vision,
 			title: 'Our Vision',
 			subtitle:
 				'We aim to be Nigeria’s foremost corporate and commercial legal service provider, delivering world-class services to our clients with the highest ethical standards.',
 			url: '',
 		},
 		{
-			img: excellence,
+			img: mission,
 			title: 'Our Mission Statement',
 			subtitle:
 				'Our goal is to always provide our clients with innovative, competent, cost-effective, and well-timed legal solutions.',
@@ -45,11 +62,7 @@ const AboutUs: React.FC = () => {
 		<>
 			<Header title="About Us" />
 
-			<Flex
-				backgroundColor="gray.50"
-				p={20}
-				flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}
-			>
+			<Flex p={20} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
 				<Box flex={1} borderRadius={5} overflow="hidden">
 					<Image
 						src={heroTwo}
@@ -73,7 +86,6 @@ const AboutUs: React.FC = () => {
 							fontSize="2rem"
 							fontWeight="500"
 							textTransform="capitalize"
-							colorScheme="gray"
 						>
 							About A.A Bride & Spartan
 						</Heading>
@@ -85,7 +97,6 @@ const AboutUs: React.FC = () => {
 							letterSpacing="0.2px"
 							textAlign="justify"
 							my={5}
-							colorScheme="gray"
 						>
 							A.A.BRIDGE &amp; SPARTAN is a full-service law firm with the
 							capacity to handle the legal needs of clients in Nigeria’s
@@ -103,7 +114,6 @@ const AboutUs: React.FC = () => {
 							letterSpacing="0.2px"
 							textAlign="justify"
 							my={5}
-							colorScheme="gray"
 						>
 							Our goal is to always provide our clients with innovative,
 							competent, cost-effective, and well- timed legal solutions.
@@ -115,7 +125,6 @@ const AboutUs: React.FC = () => {
 							lineHeight="1.5rem"
 							letterSpacing="0.2px"
 							textAlign="justify"
-							colorScheme="gray"
 							my={5}
 						>
 							At A.A.BRIDGE &amp; SPARTAN, we offer deep knowledge not just of
@@ -131,7 +140,7 @@ const AboutUs: React.FC = () => {
 				</Box>
 			</Flex>
 
-			<Box bgColor="gray.900" p={20} height="100%">
+			<Box bg={coreValuesBg} p={20} height="100%">
 				<SimpleGrid columns={{ lg: 4, md: 2, sm: 1 }} spacing={6}>
 					{coreValues.map((value) => (
 						<Box
@@ -153,6 +162,7 @@ const AboutUs: React.FC = () => {
 									right={0}
 									left={0}
 									width="100%"
+									backgroundColor={colorMode.bgOpaque}
 									_hover={{
 										bgColor: '#08133AE3',
 										opacity: 0.3,
@@ -175,15 +185,12 @@ const AboutUs: React.FC = () => {
 									fontSize="1.5rem"
 									fontWeight="500"
 									lineHeight="1.5rem"
-									color="gray.50"
 									textTransform="capitalize"
 								>
 									{value.title}
 								</Heading>
 
-								<Text color="gray.50" mt={5}>
-									{value.subtitle}
-								</Text>
+								<Text mt={5}>{value.subtitle}</Text>
 							</Box>
 						</Box>
 					))}

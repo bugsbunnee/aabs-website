@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Heading } from '@chakra-ui/react';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import cover from '../assets/images/dispute.jpg';
 
 interface HeaderProps {
@@ -9,12 +10,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
+	const { bgOpaque, colorOpaque } = useCustomColorMode();
+
 	return (
 		<Box
 			backgroundSize="cover"
 			width="100vw"
 			bgPosition="center"
-			backgroundColor="#101010"
+			backgroundColor={colorOpaque}
 			backgroundImage={cover}
 			height="20rem"
 			display="flex"
@@ -32,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
 				right={0}
 				left={0}
 				bottom={0}
-				bgColor="rgba(0,0,0,0.65)"
+				bgColor={bgOpaque}
 			/>
 
 			<Box zIndex={999}>

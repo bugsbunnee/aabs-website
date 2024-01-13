@@ -7,6 +7,7 @@ import {
 	Image,
 	Link,
 	Text,
+	useColorModeValue,
 } from '@chakra-ui/react';
 
 import ContactUs from '../components/ContactUs';
@@ -15,15 +16,13 @@ import Header from '../components/Header';
 import corporate from '../assets/images/corporate.jpg';
 
 const Career: React.FC = () => {
+	const linkColor = useColorModeValue('blue.600', 'blue.200');
+
 	return (
 		<>
 			<Header title="Career" />
 
-			<Flex
-				backgroundColor="gray.50"
-				p={20}
-				flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}
-			>
+			<Flex p={20} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
 				<Box flex={1} borderRadius={5} overflow="hidden">
 					<Image
 						src={corporate}
@@ -45,7 +44,6 @@ const Career: React.FC = () => {
 				>
 					<Box maxWidth="90%">
 						<Heading
-							colorScheme="gray"
 							fontSize="2rem"
 							fontWeight="500"
 							textTransform="capitalize"
@@ -54,7 +52,6 @@ const Career: React.FC = () => {
 						</Heading>
 
 						<Text
-							colorScheme="gray"
 							fontSize="1rem"
 							fontWeight="400"
 							lineHeight="1.5rem"
@@ -68,7 +65,7 @@ const Career: React.FC = () => {
 							letter to{' '}
 							<Link
 								href={`mailto:${import.meta.env.VITE_EMAIL}`}
-								color="link.100"
+								color={linkColor}
 							>
 								{import.meta.env.VITE_EMAIL}
 							</Link>
@@ -77,7 +74,6 @@ const Career: React.FC = () => {
 						<Button
 							as={Link}
 							href={`mailto:${import.meta.env.VITE_EMAIL}`}
-							colorScheme="gray"
 							_hover={{ textDecoration: 'none' }}
 							size="lg"
 							borderRadius={5}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { HStack, Stack, Text, Textarea, TextareaProps } from '@chakra-ui/react';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 interface Props extends TextareaProps {
 	error?: string;
@@ -7,6 +8,8 @@ interface Props extends TextareaProps {
 
 const TextArea = React.forwardRef<HTMLInputElement, Props>(
 	({ error, ...otherProps }, ref) => {
+		const { color } = useCustomColorMode();
+
 		return (
 			<Stack spacing={2}>
 				<Textarea
@@ -14,10 +17,12 @@ const TextArea = React.forwardRef<HTMLInputElement, Props>(
 					ref={ref}
 					errorBorderColor="error.100"
 					isInvalid={!!error}
-					bg="white"
+					variant="outline"
+					focusBorderColor={color}
+					borderColor={color}
+					color={color}
 					borderRadius={5}
 					fontSize="small"
-					variant="outline"
 					placeholder={otherProps['aria-label']}
 				/>
 

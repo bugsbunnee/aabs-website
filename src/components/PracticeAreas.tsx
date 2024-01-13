@@ -17,21 +17,22 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/free-mode';
 import 'swiper/css/parallax';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 const PracticeAreas: React.FC = () => {
 	const [swiper, setSwiper] = useState<SwiperCore>();
 
 	const navigate = useNavigate();
+	const colorMode = useCustomColorMode();
 
 	return (
-		<Box id="practice-areas" bgColor="gray.50" width="100vw" px={10} py={20}>
-			<Heading color="gray.900" fontSize="2rem" size="lg" textAlign="center">
+		<Box id="practice-areas" width="100vw" px={10} py={20}>
+			<Heading fontSize="2rem" size="lg" textAlign="center">
 				Practice Areas
 			</Heading>
 
 			<Box display="flex" justifyContent="center">
 				<Text
-					color="gray.900"
 					fontSize="1rem"
 					fontWeight="400"
 					lineHeight="1.5rem"
@@ -54,7 +55,13 @@ const PracticeAreas: React.FC = () => {
 
 			<Box my={4} display="flex" justifyContent="center">
 				<Box width="80%">
-					{swiper ? <SliderButtons swiper={swiper} /> : null}
+					{swiper ? (
+						<SliderButtons
+							bgColor={colorMode.bgOpaque}
+							color={colorMode.colorOpaque}
+							swiper={swiper}
+						/>
+					) : null}
 
 					<Swiper
 						modules={[Autoplay, FreeMode, Parallax, A11y]}
@@ -95,7 +102,6 @@ const PracticeAreas: React.FC = () => {
 			<Box display="flex" justifyContent="center">
 				<Button
 					onClick={() => navigate(APP_ROUTES.allPracticeAreas)}
-					colorScheme="gray"
 					size="md"
 					borderRadius={5}
 					marginTop={8}

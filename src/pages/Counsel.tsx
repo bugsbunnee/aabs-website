@@ -14,6 +14,7 @@ import ContactUs from '../components/ContactUs';
 import Header from '../components/Header';
 import PlatformIconList from '../components/PlatformIconList';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import heroOne from '../assets/images/dispute.jpg';
 
 interface CounselSlide extends Slide {
@@ -225,6 +226,8 @@ const Counsel: React.FC = () => {
 		},
 	];
 
+	const { colorOpaque } = useCustomColorMode();
+
 	const renderProfile = (profile: CounselSlide) => {
 		return (
 			<Box key={profile.title} maxWidth="25rem">
@@ -259,21 +262,11 @@ const Counsel: React.FC = () => {
 				</Box>
 
 				<Box mt={5} width="100%">
-					<Heading
-						fontSize="1.2rem"
-						textTransform="capitalize"
-						noOfLines={1}
-						colorScheme="gray"
-					>
+					<Heading fontSize="1.2rem" textTransform="capitalize" noOfLines={1}>
 						{profile.title}
 					</Heading>
 
-					<Text
-						colorScheme="gray"
-						mt={1}
-						fontSize="medium"
-						textTransform="capitalize"
-					>
+					<Text mt={1} fontSize="medium" textTransform="capitalize">
 						{profile.subtitle}
 					</Text>
 
@@ -293,15 +286,9 @@ const Counsel: React.FC = () => {
 		<>
 			<Header title="Our People" subtitle="Legal experts" />
 
-			<Box bgColor="gray.50" py={10} px={20} height="100%">
+			<Box py={10} px={20} height="100%">
 				<Box>
-					<Heading
-						mb={10}
-						color="gray.900"
-						fontSize="2rem"
-						size="lg"
-						textAlign="center"
-					>
+					<Heading mb={10} fontSize="2rem" size="lg" textAlign="center">
 						Our People
 					</Heading>
 
@@ -310,16 +297,10 @@ const Counsel: React.FC = () => {
 					</SimpleGrid>
 				</Box>
 
-				<Divider borderColor="gray.500" my={20} />
+				<Divider borderColor={colorOpaque} my={20} />
 
 				<Box>
-					<Heading
-						mb={10}
-						color="gray.900"
-						fontSize="2rem"
-						size="lg"
-						textAlign="center"
-					>
+					<Heading mb={10} fontSize="2rem" size="lg" textAlign="center">
 						Associate Profiles
 					</Heading>
 

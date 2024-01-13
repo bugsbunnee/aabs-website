@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { Select, SelectProps, Stack, Text } from '@chakra-ui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { Option } from '../models';
+
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 interface Props extends SelectProps {
 	error?: string;
@@ -10,6 +13,8 @@ interface Props extends SelectProps {
 
 const SelectField = React.forwardRef<HTMLInputElement, Props>(
 	({ error, options, ...otherProps }, ref) => {
+		const { color } = useCustomColorMode();
+
 		return (
 			<Stack spacing={2} width="100%">
 				<Select
@@ -24,7 +29,9 @@ const SelectField = React.forwardRef<HTMLInputElement, Props>(
 					borderRadius={5}
 					errorBorderColor="error.100"
 					variant="outline"
-					bg="white"
+					focusBorderColor={color}
+					borderColor={color}
+					color={color}
 					_disabled={{ opacity: 0.5 }}
 				>
 					{options.map((option) => (

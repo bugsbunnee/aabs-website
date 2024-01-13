@@ -18,6 +18,7 @@ import SelectField from './SelectField';
 import TextArea from './TextArea';
 
 import useCountries from '../hooks/useCountries';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import useStates from '../hooks/useStates';
 
 import resend from '../services/resend';
@@ -65,7 +66,9 @@ const BriefLawyer: React.FC = () => {
 		resolver: zodResolver(schema),
 	});
 
+	const colorMode = useCustomColorMode();
 	const toast = useToast();
+
 	const countriesResult = useCountries();
 	const statesResult = useStates(watch('country')!);
 
@@ -93,12 +96,12 @@ const BriefLawyer: React.FC = () => {
 				fontSize="1.2rem"
 				fontWeight="500"
 				textTransform="capitalize"
-				color="gray.50"
+				color={colorMode.color}
 			>
 				Your matter
 			</Heading>
 
-			<Text fontSize="0.875rem" my={2} fontWeight="400" color="gray.50">
+			<Text fontSize="0.875rem" my={2} fontWeight="400" color={colorMode.color}>
 				Kindly give us brief details of how we may be of assistance in the box
 				below:
 			</Text>
@@ -113,7 +116,7 @@ const BriefLawyer: React.FC = () => {
 				fontSize="1.2rem"
 				fontWeight="500"
 				textTransform="capitalize"
-				color="gray.50"
+				color={colorMode.color}
 			>
 				Your Information
 			</Heading>
@@ -155,13 +158,13 @@ const BriefLawyer: React.FC = () => {
 				/>
 			</HStack>
 
-			<Divider borderColor="gray.50" my={5} />
+			<Divider borderColor={colorMode.color} my={5} />
 
 			<Heading
 				fontSize="1.2rem"
 				fontWeight="500"
 				textTransform="capitalize"
-				color="gray.50"
+				color={colorMode.color}
 			>
 				Your Address
 			</Heading>
@@ -204,18 +207,18 @@ const BriefLawyer: React.FC = () => {
 				/>
 			</HStack>
 
-			<Divider borderColor="gray.50" my={5} />
+			<Divider borderColor={colorMode.color} my={5} />
 
 			<Heading
 				fontSize="1.2rem"
 				fontWeight="500"
 				textTransform="capitalize"
-				color="gray.50"
+				color={colorMode.color}
 			>
 				Contacting you
 			</Heading>
 
-			<Text fontSize="0.875rem" mt={2} fontWeight="400" color="gray.50">
+			<Text fontSize="0.875rem" mt={2} fontWeight="400" color={colorMode.color}>
 				Kindly indicate in the box below how you would like us to contact you
 				(e.g. by telephone, and if we can leave a voice message or not, or by
 				email) and the best time to reach you.
@@ -232,7 +235,8 @@ const BriefLawyer: React.FC = () => {
 
 			<Button
 				mt={5}
-				colorScheme="gray"
+				bg={colorMode.color}
+				color={colorMode.bg}
 				form="brieflawyer"
 				isDisabled={!isValid}
 				isLoading={isSubmitting}

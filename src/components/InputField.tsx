@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, InputGroup, InputProps, Stack, Text } from '@chakra-ui/react';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 interface Props extends InputProps {
 	error?: string;
@@ -7,6 +8,8 @@ interface Props extends InputProps {
 
 const InputField = React.forwardRef<HTMLInputElement, Props>(
 	({ error, ...otherProps }, ref) => {
+		const { color } = useCustomColorMode();
+
 		return (
 			<Stack spacing={2} width="100%">
 				<InputGroup>
@@ -18,10 +21,13 @@ const InputField = React.forwardRef<HTMLInputElement, Props>(
 						placeholder={otherProps['aria-label']}
 						fontSize="small"
 						borderRadius={5}
+						_placeholder={{ color }}
+						_hover={{ borderColor: color, opacity: 0.6 }}
 						errorBorderColor="error.100"
 						variant="outline"
-						bg="white"
-						colorScheme="gray"
+						focusBorderColor={color}
+						borderColor={color}
+						color={color}
 						_disabled={{ opacity: 0.5 }}
 					/>
 				</InputGroup>

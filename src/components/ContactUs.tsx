@@ -16,14 +16,21 @@ import {
 	Center,
 	Stack,
 	Image,
+	useColorModeValue,
 } from '@chakra-ui/react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { APP_ROUTES } from '../utils/constants';
 
 import NewsLetter from './NewsLetter';
+
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import recycle from '../assets/images/recycle.png';
 
 const ContactUs: React.FC = () => {
+	const { bg, color } = useCustomColorMode();
+
+	const iconColor = useColorModeValue('#FFFFFF', '#000000');
+
 	const subroutes = [
 		{
 			label: 'The firm',
@@ -47,31 +54,31 @@ const ContactUs: React.FC = () => {
 		{
 			color: '#316FF6',
 			label: 'Facebook',
-			icon: <FaFacebook color="white" size={30} />,
+			icon: <FaFacebook color={iconColor} size={30} />,
 			url: 'https://www.facebook.com/AABridgeAndSpartan',
 		},
 		{
 			color: '#5B51D8',
 			label: 'Instagram',
-			icon: <FaInstagram color="white" size={30} />,
+			icon: <FaInstagram color={iconColor} size={30} />,
 			url: 'https://instagram.com/aabridgeandspartan',
 		},
 		{
 			color: '#1DA1F2',
 			label: 'Twitter',
-			icon: <FaTwitter color="white" size={30} />,
+			icon: <FaTwitter color={iconColor} size={30} />,
 			url: 'https://www.twitter.com/aabridgespartan',
 		},
 		{
 			color: '#0077b5',
 			label: 'LinkedIn',
-			icon: <FaLinkedin color="white" size={30} />,
+			icon: <FaLinkedin color={iconColor} size={30} />,
 			url: 'https://www.linkedin.com/company/aabridgeandspartan',
 		},
 	];
 
 	return (
-		<Box id="contact-us" bgColor="gray.900" width="100vw" p={10}>
+		<Box id="contact-us" bgColor={bg} width="100vw" p={10}>
 			<Stack>
 				<Center>
 					<Box
@@ -98,13 +105,13 @@ const ContactUs: React.FC = () => {
 							))}
 						</SimpleGrid>
 
-						<Divider borderColor="gray.50" opacity={0.3} my={5} />
+						<Divider borderColor={color} opacity={0.3} my={5} />
 
 						<NewsLetter />
 
 						<Breadcrumb
 							my={10}
-							separator={<RxDividerVertical color="white" opacity={0.2} />}
+							separator={<RxDividerVertical color={iconColor} opacity={0.2} />}
 						>
 							{subroutes.map((subroute) => (
 								<BreadcrumbItem key={subroute.label}>
@@ -112,7 +119,7 @@ const ContactUs: React.FC = () => {
 										as={ReactRouterLink}
 										to={subroute.route}
 										fontSize="0.875rem"
-										color="gray.200"
+										color={color}
 										letterSpacing="2px"
 										lineHeight="2.4rem"
 										textTransform="capitalize"
@@ -140,12 +147,12 @@ const ContactUs: React.FC = () => {
 				</Stack>
 
 				<HStack>
-					<Text color="gray.50" fontSize="x-small">
+					<Text color={color} fontSize="x-small">
 						© {new Date().getFullYear()} A.A. Bride & Spartan. All Rights
 						reserved
 					</Text>
 					<Spacer />
-					<Text color="gray.50" fontSize="x-small">
+					<Text color={color} fontSize="x-small">
 						Privacy Policy
 					</Text>
 				</HStack>

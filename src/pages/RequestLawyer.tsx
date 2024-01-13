@@ -6,18 +6,17 @@ import { IoMdHome } from 'react-icons/io';
 import BriefLawyer from '../components/BriefLawyer';
 import ContactUs from '../components/ContactUs';
 import Header from '../components/Header';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 const RequestLawyer: React.FC = () => {
+	const { bg, bgOpaque } = useCustomColorMode();
+
 	return (
 		<>
 			<Header title="Request a Lawyer" />
 
-			<Box bgColor="gray.50" p={5}>
-				<Flex
-					backgroundColor="gray.50"
-					p={20}
-					direction={{ sm: 'column', md: 'column', lg: 'row' }}
-				>
+			<Box p={5}>
+				<Flex p={20} direction={{ sm: 'column', md: 'column', lg: 'row' }}>
 					<Box
 						flex={1}
 						justifyContent="center"
@@ -26,11 +25,7 @@ const RequestLawyer: React.FC = () => {
 					>
 						<Box maxWidth="90%">
 							<Box>
-								<Heading
-									fontSize="2rem"
-									textTransform="capitalize"
-									colorScheme="gray"
-								>
+								<Heading fontSize="2rem" textTransform="capitalize">
 									Get Started
 								</Heading>
 
@@ -40,7 +35,6 @@ const RequestLawyer: React.FC = () => {
 									lineHeight="1.5rem"
 									letterSpacing="0.2px"
 									textAlign="justify"
-									colorScheme="gray"
 									my={5}
 								>
 									Please fill in this form and one of our specialist lawyers
@@ -74,8 +68,8 @@ const RequestLawyer: React.FC = () => {
 								<Stack spacing={6}>
 									{contactInfo.map((info) => (
 										<Box
+											bg={bgOpaque}
 											key={info.label}
-											bgColor="gray.100"
 											p={5}
 											borderRadius={4}
 											display="inline-block"
@@ -84,7 +78,6 @@ const RequestLawyer: React.FC = () => {
 												<Heading
 													fontSize="1rem"
 													fontWeight="500"
-													colorScheme="gray"
 													textTransform="capitalize"
 												>
 													{info.label}
@@ -94,7 +87,6 @@ const RequestLawyer: React.FC = () => {
 													{info.icon}
 
 													<Text
-														colorScheme="gray"
 														letterSpacing="0.2px"
 														fontWeight="400"
 														fontSize="0.875rem"
@@ -118,7 +110,7 @@ const RequestLawyer: React.FC = () => {
 						alignItems="center"
 						display="flex"
 					>
-						<Box width="90%" p={10} bgColor="gray.900" borderRadius={10}>
+						<Box bg={bg} width="90%" p={10} borderRadius={10}>
 							<BriefLawyer />
 						</Box>
 					</Box>

@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import InputField from './InputField';
 import resend from '../services/resend';
+import useCustomColorMode from '../hooks/useCustomColorMode';
 
 const schema = z.object({
 	fullName: z
@@ -35,6 +36,7 @@ const NewsLetter: React.FC = () => {
 		resolver: zodResolver(schema),
 	});
 
+	const colorMode = useCustomColorMode();
 	const toast = useToast();
 
 	const handleSendNewsletter = async (data: NewsLetterUser) => {
@@ -58,11 +60,11 @@ const NewsLetter: React.FC = () => {
 	return (
 		<form id="newsletter" onSubmit={handleSubmit(handleSendNewsletter)}>
 			<Heading
+				color={colorMode.color}
 				size="md"
 				fontSize="1rem"
 				fontWeight="500"
 				textTransform="uppercase"
-				color="gray.50"
 				textAlign="center"
 			>
 				Stay Ahead
@@ -71,7 +73,7 @@ const NewsLetter: React.FC = () => {
 			<Box display="flex" justifyContent="center" mt={2}>
 				<Text
 					width={{ sm: '100%', md: '70%', lg: '70%' }}
-					color="gray.50"
+					color={colorMode.color}
 					fontSize="0.875rem"
 					size="md"
 					textAlign="center"
@@ -96,7 +98,8 @@ const NewsLetter: React.FC = () => {
 				/>
 
 				<Button
-					colorScheme="gray"
+					bg={colorMode.color}
+					color={colorMode.bg}
 					form="newsletter"
 					isDisabled={!isValid}
 					isLoading={isSubmitting}
