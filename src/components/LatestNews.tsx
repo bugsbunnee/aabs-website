@@ -90,7 +90,7 @@ const LatestNews: React.FC = () => {
 			}}
 		>
 			<Box
-				bgColor="gray.50"
+				// bgColor="gray.50"
 				px={20}
 				py={{ md: 20, sm: 10 }}
 				display="flex"
