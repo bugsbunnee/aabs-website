@@ -104,7 +104,7 @@ const LatestNews: React.FC = () => {
 			>
 				<Box>
 					<Heading
-						color="gray.900"
+						// color="gray.900"
 						size="lg"
 						fontSize="2rem"
 						textTransform="capitalize"
@@ -113,7 +113,7 @@ const LatestNews: React.FC = () => {
 					</Heading>
 
 					<Text
-						color="gray.900"
+						// colorScheme="gray"
 						size="medium"
 						fontSize="1rem"
 						lineHeight="1.5rem"
@@ -125,7 +125,7 @@ const LatestNews: React.FC = () => {
 					</Text>
 
 					<Button
-						colorScheme="gray"
+						// colorScheme="gray"
 						size="md"
 						borderRadius={5}
 						marginTop={8}
