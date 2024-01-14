@@ -16,7 +16,10 @@ const RequestLawyer: React.FC = () => {
 			<Header title="Request a Lawyer" />
 
 			<Box p={5}>
-				<Flex p={20} direction={{ sm: 'column', md: 'column', lg: 'row' }}>
+				<Flex
+					p={{ base: 10, md: 20, lg: 20 }}
+					direction={{ base: 'column', lg: 'row' }}
+				>
 					<Box
 						flex={1}
 						justifyContent="center"
@@ -104,8 +107,8 @@ const RequestLawyer: React.FC = () => {
 
 					<Box
 						flex={1}
-						ml={{ lg: 10, md: 0, sm: 0 }}
-						mt={{ md: 10, sm: 10, lg: 0 }}
+						ml={{ base: 0, lg: 10 }}
+						mt={{ base: 10, lg: 0 }}
 						justifyContent="center"
 						alignItems="center"
 						display="flex"

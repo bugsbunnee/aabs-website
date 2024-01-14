@@ -78,21 +78,12 @@ const LatestNews: React.FC = () => {
 	return (
 		<Flex
 			width="100vw"
-			height={{
-				lg: '30rem',
-				md: 'auto',
-				sm: 'auto',
-			}}
-			flexDirection={{
-				lg: 'row',
-				md: 'column',
-				sm: 'column',
-			}}
+			height={{ lg: '30rem', base: 'auto' }}
+			flexDirection={{ lg: 'row', base: 'column' }}
 		>
 			<Box
-				// bgColor="gray.50"
 				px={20}
-				py={{ md: 20, sm: 10 }}
+				py={{ sm: 10, base: 20 }}
 				display="flex"
 				justifyContent="flex-start"
 				alignItems="center"
@@ -100,20 +91,16 @@ const LatestNews: React.FC = () => {
 				width={{
 					lg: '30vw',
 					md: '100%',
+					sm: '100%',
+					base: '100%',
 				}}
 			>
 				<Box>
-					<Heading
-						// color="gray.900"
-						size="lg"
-						fontSize="2rem"
-						textTransform="capitalize"
-					>
+					<Heading size="lg" fontSize="2rem" textTransform="capitalize">
 						Newsletters & Articles
 					</Heading>
 
 					<Text
-						// colorScheme="gray"
 						size="medium"
 						fontSize="1rem"
 						lineHeight="1.5rem"
@@ -125,7 +112,6 @@ const LatestNews: React.FC = () => {
 					</Text>
 
 					<Button
-						// colorScheme="gray"
 						size="md"
 						borderRadius={5}
 						marginTop={8}
@@ -137,14 +123,10 @@ const LatestNews: React.FC = () => {
 				</Box>
 			</Box>
 			<Box
-				width={{
-					lg: '70vw',
-					md: '100%',
-					sm: '100%',
-				}}
-				py={{ md: 10, sm: 10 }}
+				width={{ lg: '70vw', base: '100%' }}
 				bgColor="dark.700"
 				height="100%"
+				py={10}
 				px={20}
 			>
 				{swiper ? (
@@ -177,18 +159,17 @@ const LatestNews: React.FC = () => {
 						<SwiperSlide key={slide.title}>
 							<Box
 								padding="0.875rem"
-								height="20rem"
+								height={{
+									base: '25rem',
+									sm: '20rem',
+									md: '20rem',
+									lg: '20rem',
+								}}
 								display="flex"
 								flexDirection="column"
 								justifyContent="center"
 							>
-								<Box
-									height={{
-										lg: '50%',
-										md: '50%',
-										sm: '20%',
-									}}
-								>
+								<Box height="50%">
 									<Text
 										color="gray.50"
 										size="lg"

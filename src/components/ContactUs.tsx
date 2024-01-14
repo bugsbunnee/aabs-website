@@ -82,7 +82,7 @@ const ContactUs: React.FC = () => {
 			<Stack>
 				<Center>
 					<Box
-						width={{ lg: '50%', md: '80%', sm: '90%' }}
+						width={{ base: '50%', md: '80%', sm: '90%' }}
 						display="flex"
 						flexDirection="column"
 						alignItems="center"
@@ -121,7 +121,12 @@ const ContactUs: React.FC = () => {
 										fontSize="0.875rem"
 										color={color}
 										letterSpacing="2px"
-										lineHeight="2.4rem"
+										lineHeight={{
+											base: 'unset',
+											lg: '2.4rem',
+											md: '2.4rem',
+											sm: '2rem',
+										}}
 										textTransform="capitalize"
 										_hover={{ textDecoration: 'none' }}
 									>

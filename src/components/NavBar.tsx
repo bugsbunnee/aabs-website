@@ -30,6 +30,7 @@ import SearchInput from './SearchInput';
 import logoLarge from '../assets/images/logo.png';
 import logoSmall from '../assets/images/logo_only.png';
 import useCustomColorMode from '../hooks/useCustomColorMode';
+import practiceAreas from '../data/practice-areas';
 
 interface NavigationLink {
 	label: string;
@@ -56,12 +57,10 @@ const NavBar: React.FC = () => {
 		},
 		{
 			label: 'Practice Areas',
-			sublinks: [
-				{
-					label: 'Our expertise',
-					route: APP_ROUTES.allPracticeAreas,
-				},
-			],
+			sublinks: practiceAreas.map((practiceArea) => ({
+				label: practiceArea.title,
+				route: APP_ROUTES.allPracticeAreas,
+			})),
 		},
 		{
 			label: 'Career',
@@ -182,7 +181,10 @@ const NavBar: React.FC = () => {
 			<Box position="sticky" top={0} width="100vw" zIndex={9999}>
 				<HStack
 					bgColor="transparent"
-					bgImage="linear-gradient(309deg, #101010 70%, #FFFFFF 70%)"
+					bgImage={{
+						base: 'linear-gradient(309deg, #101010 70%, #FFFFFF 70%)',
+						md: 'linear-gradient(309deg, #101010 60%, #FFFFFF 60%)',
+					}}
 					height="5rem"
 					paddingTop={1}
 					paddingBottom={1}
@@ -198,6 +200,7 @@ const NavBar: React.FC = () => {
 								objectFit="contain"
 							/>
 						</Show>
+
 						<Show below="lg">
 							<Image
 								alt="A.A Bridge & Spartan"

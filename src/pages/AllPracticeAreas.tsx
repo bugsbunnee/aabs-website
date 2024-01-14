@@ -40,6 +40,7 @@ const AllPracticeAreas: React.FC = () => {
 						<PracticeAreaItem
 							key={practiceArea.title}
 							practiceArea={practiceArea}
+							showOverview
 						/>
 					))}
 				</SimpleGrid>

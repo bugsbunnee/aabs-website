@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
 						display="flex"
 						alignItems="center"
 						justifyContent="flex-start"
-						padding={{ lg: '10rem', md: '6rem', sm: '3rem' }}
+						padding={{ lg: '10rem', md: '6rem', sm: '3rem', base: '3rem' }}
 					>
 						<Box
 							width="100%"
@@ -87,7 +87,10 @@ const Hero: React.FC = () => {
 							bgColor="rgba(0,0,0,0.27)"
 						/>
 
-						<Box maxWidth="50%" zIndex={9999}>
+						<Box
+							maxWidth={{ lg: '50%', md: '50%', sm: '70%', base: '90%' }}
+							zIndex={9999}
+						>
 							<Heading
 								color="gray.50"
 								size="lg"

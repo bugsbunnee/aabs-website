@@ -67,4 +67,8 @@ body {
 	.swiper-button-next {
 		right: 1rem;
 	}
+
+	:root {
+		--swiper-navigation-top-offset: 80%;
+	}
 }

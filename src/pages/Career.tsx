@@ -22,7 +22,7 @@ const Career: React.FC = () => {
 		<>
 			<Header title="Career" />
 
-			<Flex p={20} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+			<Flex p={20} flexDirection={{ base: 'column', lg: 'row' }}>
 				<Box flex={1} borderRadius={5} overflow="hidden">
 					<Image
 						src={corporate}
@@ -36,8 +36,8 @@ const Career: React.FC = () => {
 
 				<Box
 					flex={1}
-					mt={{ sm: 10, md: 0, lg: 0 }}
-					ml={{ lg: 10, md: 10, sm: 0 }}
+					mt={{ base: 10, lg: 0 }}
+					ml={{ base: 0, lg: 10, md: 10, sm: 0 }}
 					justifyContent="center"
 					alignItems="center"
 					display="flex"

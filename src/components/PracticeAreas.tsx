@@ -54,7 +54,7 @@ const PracticeAreas: React.FC = () => {
 			</Box>
 
 			<Box my={4} display="flex" justifyContent="center">
-				<Box width="80%">
+				<Box width="90%">
 					{swiper ? (
 						<SliderButtons
 							bgColor={colorMode.bgOpaque}

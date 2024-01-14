@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
 							fontWeight="500"
 							textTransform="capitalize"
 						>
-							About A.A Bride & Spartan
+							About A.A Bridge & Spartan
 						</Heading>
 
 						<Text
@@ -98,12 +98,12 @@ const AboutUs: React.FC = () => {
 							textAlign="justify"
 							my={5}
 						>
-							A.A.BRIDGE &amp; SPARTAN is a full-service law firm with the
-							capacity to handle the legal needs of clients in Nigeria’s
-							peculiar business environment. The Firm is made up of highly
-							experienced corporate and commercial lawyers whose experience and
-							expertise span the areas of Corporate and Commercial law; Banking
-							and Finance; Energy and Natural resources; Dispute Resolution;
+							A.A.BRIDGE & SPARTAN is a full-service law firm with the capacity
+							to handle the legal needs of clients in Nigeria’s peculiar
+							business environment. The Firm is made up of highly experienced
+							corporate and commercial lawyers whose experience and expertise
+							span the areas of Corporate and Commercial law; Banking and
+							Finance; Energy and Natural resources; Dispute Resolution;
 							Insurance; Maritime; Intellectual Property and Public Procurement.
 						</Text>
 
