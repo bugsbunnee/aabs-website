@@ -11,19 +11,19 @@ import { APP_ROUTES } from '../utils/constants';
 import PracticeAreaItem from './PracticeAreaItem';
 import SliderButtons from './SliderButtons';
 
+import useCustomColorMode from '../hooks/useCustomColorMode';
 import practiceAreas from '../data/practice-areas';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/free-mode';
 import 'swiper/css/parallax';
-import useCustomColorMode from '../hooks/useCustomColorMode';
 
 const PracticeAreas: React.FC = () => {
 	const [swiper, setSwiper] = useState<SwiperCore>();
 
-	const navigate = useNavigate();
 	const colorMode = useCustomColorMode();
+	const navigate = useNavigate();
 
 	return (
 		<Box id="practice-areas" width="100vw" px={10} py={20}>
