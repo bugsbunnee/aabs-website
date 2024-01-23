@@ -24,6 +24,9 @@ const TextArea = React.forwardRef<HTMLInputElement, Props>(
 					borderRadius={5}
 					fontSize="small"
 					placeholder={otherProps['aria-label']}
+					_disabled={{ opacity: 0.5 }}
+					_hover={{ borderColor: color, opacity: 0.6 }}
+					_placeholder={{ color }}
 				/>
 
 				<HStack justifyContent="flex-end" mt="0.5rem">

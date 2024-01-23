@@ -92,7 +92,7 @@ const PracticeAreas: React.FC = () => {
 					>
 						{practiceAreas.map((practiceArea) => (
 							<SwiperSlide key={practiceArea.title}>
-								<PracticeAreaItem practiceArea={practiceArea} />
+								<PracticeAreaItem practiceArea={practiceArea} isDescriptionVisible={false} />
 							</SwiperSlide>
 						))}
 					</Swiper>

@@ -5,6 +5,7 @@ import { COLOR_MODE } from '../utils/constants';
 
 import ExpandableText from './ExpandableText';
 import useCustomColorMode from '../hooks/useCustomColorMode';
+import Conditional from './Conditional';
 
 interface PracticeAreaSlide extends Slide {
 	overview: string;
@@ -12,9 +13,10 @@ interface PracticeAreaSlide extends Slide {
 
 interface Props {
 	practiceArea: PracticeAreaSlide;
+	isDescriptionVisible: boolean;
 }
 
-const PracticeAreaItem: React.FC<Props> = ({ practiceArea }) => {
+const PracticeAreaItem: React.FC<Props> = ({ practiceArea , isDescriptionVisible}) => {
 	const infoBg = useColorModeValue(COLOR_MODE.DARK, COLOR_MODE.LIGHT);
 	const infoColor = useColorModeValue(COLOR_MODE.LIGHT, COLOR_MODE.DARK);
 
@@ -80,11 +82,13 @@ const PracticeAreaItem: React.FC<Props> = ({ practiceArea }) => {
 				</Box>
 			</Box>
 
+			<Conditional isVisible={isDescriptionVisible}>
 			<Box bg={bgOpaque} borderRadius={5} p={5}>
 				<ExpandableText textAlign="justify" fontSize="0.975rem">
 					{practiceArea.overview}
 				</ExpandableText>
 			</Box>
+			</Conditional>
 		</Stack>
 	);
 };
