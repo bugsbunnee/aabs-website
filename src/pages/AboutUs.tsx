@@ -127,8 +127,8 @@ const AboutUs: React.FC = () => {
 							textAlign="justify"
 							my={5}
 						>
-							At A.A.BRIDGE &amp; SPARTAN, we offer deep knowledge not just of
-							the law, but of the sectors in which our clients work. This extra
+							At A.A.BRIDGE & SPARTAN, we offer deep knowledge not just of the
+							law, but of the sectors in which our clients work. This extra
 							dimension to our expertise sets us apart. We are dedicated to
 							working with clients to help them achieve their business goals and
 							overcome legal challenges anywhere in Nigeria. As a commercial
