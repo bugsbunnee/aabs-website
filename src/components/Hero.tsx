@@ -60,6 +60,7 @@ const Hero: React.FC = () => {
 			freeMode
 			parallax
 			className="hero-slides"
+			fadeEffect={{ crossFade: true }}
 		>
 			{heroSlides.map((heroSlide) => (
 				<SwiperSlide key={heroSlide.title}>
