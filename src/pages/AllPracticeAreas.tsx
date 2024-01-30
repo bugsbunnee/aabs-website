@@ -12,7 +12,7 @@ const AllPracticeAreas: React.FC = () => {
 		<>
 			<Header title="Our Expertise" />
 
-			<Box p={20}>
+			<Box p={{ base: 10, lg: 20 }}>
 				<Box display="flex" justifyContent="center">
 					<Text
 						fontSize="1rem"

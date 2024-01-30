@@ -22,7 +22,10 @@ const Career: React.FC = () => {
 		<>
 			<Header title="Career" />
 
-			<Flex p={20} flexDirection={{ base: 'column', lg: 'row' }}>
+			<Flex
+				p={{ base: 10, lg: 20 }}
+				flexDirection={{ base: 'column', lg: 'row' }}
+			>
 				<Box flex={1} borderRadius={5} overflow="hidden">
 					<Image
 						src={corporate}

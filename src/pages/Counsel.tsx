@@ -286,7 +286,7 @@ const Counsel: React.FC = () => {
 		<>
 			<Header title="Our People" subtitle="Legal experts" />
 
-			<Box py={10} px={20} height="100%">
+			<Box py={10} px={{ base: 10, lg: 20 }} height="100%">
 				<Box>
 					<Heading mb={10} fontSize="2rem" size="lg" textAlign="center">
 						Our People

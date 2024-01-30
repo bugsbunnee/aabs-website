@@ -62,7 +62,10 @@ const AboutUs: React.FC = () => {
 		<>
 			<Header title="About Us" />
 
-			<Flex p={20} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+			<Flex
+				p={{ base: 10, lg: 20 }}
+				flexDirection={{ base: 'column', md: 'row', lg: 'row' }}
+			>
 				<Box flex={1} borderRadius={5} overflow="hidden">
 					<Image
 						src={heroTwo}
@@ -75,8 +78,8 @@ const AboutUs: React.FC = () => {
 
 				<Box
 					flex={1}
-					mt={{ sm: 10 }}
-					ml={{ lg: 10 }}
+					mt={{ base: 10, md: 0 }}
+					ml={{ base: 0, lg: 10 }}
 					justifyContent="center"
 					alignItems="center"
 					display="flex"
@@ -140,7 +143,7 @@ const AboutUs: React.FC = () => {
 				</Box>
 			</Flex>
 
-			<Box bg={coreValuesBg} p={20} height="100%">
+			<Box bg={coreValuesBg} p={{ base: 10, lg: 20 }} height="100%">
 				<SimpleGrid columns={{ lg: 4, md: 2, sm: 1 }} spacing={6}>
 					{coreValues.map((value) => (
 						<Box
